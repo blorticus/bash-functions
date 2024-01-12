@@ -13,7 +13,6 @@ fi
 for c in oc kubectl; do
     if [[ ! -f $sourceable_directory/$c ]]; then
         if [[ $(which "$c" 2>/dev/null) != "" ]]; then
-            echo $c
             "$c" completion bash > "$sourceable_directory/${c}-completions"
         fi
     fi
